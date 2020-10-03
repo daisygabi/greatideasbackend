@@ -82,6 +82,19 @@ public class IdeaServiceTest {
         assertEquals(pagedPosts.getNumberOfElements(), 23);
     }
 
+    @Test
+    public void saveIdea_WithValidData_Should_SaveIdea() {
+        when(repository.save(idea)).thenReturn(idea);
+        Idea savedIdea = subject.save(idea);
+
+        assertThat(savedIdea.getId()).isEqualTo(savedIdea.getId());
+        assertThat(savedIdea.getName()).isEqualTo(savedIdea.getName());
+        assertThat(savedIdea.getLikes()).isEqualTo(savedIdea.getLikes());
+        assertThat(savedIdea.getDescription()).isEqualTo(savedIdea.getDescription());
+        assertThat(savedIdea.getAuthorName()).isEqualTo(savedIdea.getAuthorName());
+        assertThat(savedIdea.getCreatedAt()).isEqualTo(savedIdea.getCreatedAt());
+    }
+
     private List<Idea> createDummyIdeas(int maximumLength) {
         List<Idea> ideas = new ArrayList<>();
         for (int i = 0; i < maximumLength; i++) {

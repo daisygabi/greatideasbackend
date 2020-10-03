@@ -36,6 +36,10 @@ public class IdeaService {
         return getIdeaRepository().findAll(pageable);
     }
 
+    public Idea save(Idea idea) {
+        return getIdeaRepository().save(idea);
+    }
+
     private Page<Idea> transformListToPageable(Pageable pageable, List<Idea> limitedResults) {
         int start = (int) pageable.getOffset();
         int end = Math.min((start + pageable.getPageSize()), limitedResults.size());
