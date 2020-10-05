@@ -25,19 +25,19 @@ public class Idea extends DefaultDomain {
     private String name;
 
     @Size(max = 2000)
-    @Column(columnDefinition = "description")
-    private String description;
+    @Column(columnDefinition = "text")
+    private String text;
 
     @Size(max = 240)
-    @Column(columnDefinition = "author_name")
-    private String authorName;
+    @Column(columnDefinition = "owner_name")
+    private String ownerName;
 
-    @Column(columnDefinition = "author_profile_image_url")
-    private String authorProfileImageUrl;
+    @Column(columnDefinition = "owner_image")
+    private String ownerImage;
 
     @Column(columnDefinition = "likes")
     private int likes;
 
-    @Column(columnDefinition = "image_url")
-    private String imageUrl;
+    @Column(columnDefinition = "image")
+    private String image;
 }

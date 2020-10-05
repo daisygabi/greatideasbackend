@@ -1,6 +1,6 @@
 /* Create demo ideas when project runs against dev profile */
 
-INSERT INTO ideas_pool (name, description, author_name, author_profile_image_url, likes, created_at, image_url)
+INSERT INTO ideas_pool (name, text, owner_name, owner_image, likes, created_at, image)
 VALUES ('Be nice to people',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         'Michelle Dany',
@@ -9,7 +9,7 @@ VALUES ('Be nice to people',
         'https://images.unsplash.com/photo-1569063386755-cf0bb824312e?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80')
 on conflict do nothing;
 
-INSERT INTO ideas_pool (name, description, author_name, author_profile_image_url, likes, created_at, image_url)
+INSERT INTO ideas_pool (name, text, owner_name, owner_image, likes, created_at, image)
 VALUES ('Listen more',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         'Michelle Dany',
@@ -18,7 +18,7 @@ VALUES ('Listen more',
         'https://images.unsplash.com/photo-1569063386755-cf0bb824312e?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80')
 on conflict do nothing;
 
-INSERT INTO ideas_pool (name, description, author_name, author_profile_image_url, likes, created_at, image_url)
+INSERT INTO ideas_pool (name, text, owner_name, owner_image, likes, created_at, image)
 VALUES ('Create browser extensions rather than entire apps',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         'Esther Lauder',
@@ -27,7 +27,7 @@ VALUES ('Create browser extensions rather than entire apps',
         'https://images.unsplash.com/photo-1569063386755-cf0bb824312e?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80')
 on conflict do nothing;
 
-INSERT INTO ideas_pool (name, description, author_name, author_profile_image_url, likes, created_at, image_url)
+INSERT INTO ideas_pool (name, text, owner_name, owner_image, likes, created_at, image)
 VALUES ('Work smart and focused',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         'Esther Lauder',
@@ -36,7 +36,7 @@ VALUES ('Work smart and focused',
         'https://images.unsplash.com/photo-1569063386755-cf0bb824312e?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80')
 on conflict do nothing;
 
-INSERT INTO ideas_pool (name, description, author_name, author_profile_image_url, likes, created_at, image_url)
+INSERT INTO ideas_pool (name, text, owner_name, owner_image, likes, created_at, image)
 VALUES ('Buy groceries in time',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         'Demo User',
@@ -45,7 +45,7 @@ VALUES ('Buy groceries in time',
         'https://images.unsplash.com/photo-1569063386755-cf0bb824312e?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80')
 on conflict do nothing;
 
-INSERT INTO ideas_pool (name, description, author_name, author_profile_image_url, likes, created_at)
+INSERT INTO ideas_pool (name, text, owner_name, owner_image, likes, created_at)
 VALUES ('Wear a mask no matter where you are outside',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         'Marie Grant',
@@ -53,7 +53,7 @@ VALUES ('Wear a mask no matter where you are outside',
         100, '2019-02-12 10:08:15.919285')
 on conflict do nothing;
 
-INSERT INTO ideas_pool (name, description, author_name, author_profile_image_url, likes, created_at)
+INSERT INTO ideas_pool (name, text, owner_name, owner_image, likes, created_at)
 VALUES ('Vote like your life depended on it',
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
         'Marie Grant',

@@ -40,9 +40,9 @@ public class IdeaServiceTest {
         idea = new Idea();
         idea.setId(1L);
         idea.setName("Adopt an animal");
-        idea.setDescription("testing descriptions here");
-        idea.setAuthorName("Gabi");
-        idea.setAuthorProfileImageUrl("");
+        idea.setText("testing descriptions here");
+        idea.setOwnerName("Gabi");
+        idea.setOwnerImage("");
         idea.setLikes(12);
         idea.setCreatedAt(Calendar.getInstance().getTime());
         idea.setCreatedAt(Calendar.getInstance().getTime());
@@ -62,8 +62,8 @@ public class IdeaServiceTest {
         assertThat(returnedIdeas.size()).isEqualTo(1);
         assertThat(returnedIdeas.get(0).getId()).isEqualTo(idea.getId());
         assertThat(returnedIdeas.get(0).getName()).isEqualTo(idea.getName());
-        assertThat(returnedIdeas.get(0).getAuthorProfileImageUrl()).isEqualTo(idea.getAuthorProfileImageUrl());
-        assertThat(returnedIdeas.get(0).getDescription()).isEqualTo(idea.getDescription());
+        assertThat(returnedIdeas.get(0).getOwnerName()).isEqualTo(idea.getOwnerName());
+        assertThat(returnedIdeas.get(0).getText()).isEqualTo(idea.getText());
         assertThat(returnedIdeas.get(0).getLikes()).isEqualTo(idea.getLikes());
     }
 
@@ -90,8 +90,8 @@ public class IdeaServiceTest {
         assertThat(savedIdea.getId()).isEqualTo(savedIdea.getId());
         assertThat(savedIdea.getName()).isEqualTo(savedIdea.getName());
         assertThat(savedIdea.getLikes()).isEqualTo(savedIdea.getLikes());
-        assertThat(savedIdea.getDescription()).isEqualTo(savedIdea.getDescription());
-        assertThat(savedIdea.getAuthorName()).isEqualTo(savedIdea.getAuthorName());
+        assertThat(savedIdea.getText()).isEqualTo(savedIdea.getText());
+        assertThat(savedIdea.getOwnerName()).isEqualTo(savedIdea.getOwnerName());
         assertThat(savedIdea.getCreatedAt()).isEqualTo(savedIdea.getCreatedAt());
     }
 

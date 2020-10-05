@@ -6,9 +6,9 @@ public class IdeaDto extends DefaultDomain {
 
     private Long id;
     private String name;
-    private String description;
-    private String authorName;
-    private String authorProfileImageUrl;
+    private String text;
+    private String ownerName;
+    private String ownerImage;
     private int likes;
-    private String imageUrl;
+    private String image;
 }
