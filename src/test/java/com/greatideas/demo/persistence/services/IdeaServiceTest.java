@@ -98,7 +98,7 @@ public class IdeaServiceTest {
     private List<Idea> createDummyIdeas(int maximumLength) {
         List<Idea> ideas = new ArrayList<>();
         for (int i = 0; i < maximumLength; i++) {
-            Idea dummyIdea = new Idea(3L, "demo name " + i, "description dummy " + i, "Gabi " + i, "http://google.com", 2, "https://images.unsplash.com/photo-1569063386755-cf0bb824312e?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80");
+            Idea dummyIdea = new Idea(3L, "demo name " + i, "description dummy " + i, "Gabi " + i, "http://google.com", 2, 3, "https://images.unsplash.com/photo-1569063386755-cf0bb824312e?ixlib=rb-1.2.1&auto=format&fit=crop&w=320&q=80");
             ideas.add(dummyIdea);
         }
         return ideas;

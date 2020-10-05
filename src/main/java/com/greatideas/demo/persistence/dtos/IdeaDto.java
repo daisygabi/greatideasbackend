@@ -10,5 +10,6 @@ public class IdeaDto extends DefaultDomain {
     private String ownerName;
     private String ownerImage;
     private int likes;
+    private int comments;
     private String image;
 }
