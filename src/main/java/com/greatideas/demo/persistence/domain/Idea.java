@@ -37,4 +37,7 @@ public class Idea extends DefaultDomain {
 
     @Column(columnDefinition = "likes")
     private int likes;
+
+    @Column(columnDefinition = "image_url")
+    private String imageUrl;
 }
