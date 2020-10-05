@@ -17,6 +17,7 @@ import static com.greatideas.demo.utils.IterableUtils.asStream;
 
 @Service
 public class IdeaService {
+    public static final int MAX_PAGE_SIZE = 50;
 
     private IdeaRepository ideaRepository;
 
@@ -29,9 +30,9 @@ public class IdeaService {
         return asStream(getIdeaRepository().findAll()).collect(Collectors.toList());
     }
 
-    public Page<Idea> getPagedListOfIdeas(Pageable pageable, int limit) {
-        List<Idea> limitedResults = ((List<Idea>) getIdeaRepository().findAll()).stream().limit(limit).collect(Collectors.toList());
-        return transformListToPageable(pageable, limitedResults);
+    public Page<Idea> getPagedListOfIdeas(Pageable pageable) {
+        if (pageable.getPageSize() > MAX_PAGE_SIZE) { throw new RuntimeException("Page size is too large."); }
+        return getIdeaRepository().findAll(pageable);
     }
 
     public Idea save(Idea idea) {

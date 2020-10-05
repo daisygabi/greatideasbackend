@@ -17,7 +17,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import static com.greatideas.demo.persistence.services.IdeaService.MAX_PAGE_SIZE;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -68,18 +70,29 @@ public class IdeaServiceTest {
     }
 
     @Test
-    public void getPagedListOfIdeas_WithDefaultLimit_ShouldReturn_ListOf_PagedPosts() {
+    public void getPagedListOfIdeas_when_page_size_less_than_max_page_size_returns_PagedIdeas() {
         List<Idea> dummyIdeas = createDummyIdeas(23);
         int pageNumber = 0;
         int pageSize = 4;
-        int limit = 0;
         Pageable pageable = PageRequest.of(pageNumber, pageSize);
         Page<Idea> postPage = new PageImpl<>(dummyIdeas);
         when(repository.findAll(pageable)).thenReturn(postPage);
 
-        Page<Idea> pagedPosts = subject.getPagedListOfIdeas(pageable, limit);
+        Page<Idea> pagedPosts = subject.getPagedListOfIdeas(pageable);
 
         assertEquals(pagedPosts.getNumberOfElements(), 23);
+    }
+
+    @Test
+    public void getPagedListOfIdeas_when_page_size_greater_than_max_page_size_throws_an_error() {
+        List<Idea> dummyIdeas = createDummyIdeas(23);
+        int pageNumber = 0;
+        int pageSize = MAX_PAGE_SIZE + 1;
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        Page<Idea> postPage = new PageImpl<>(dummyIdeas);
+        when(repository.findAll(pageable)).thenReturn(postPage);
+
+        assertThatThrownBy(() -> subject.getPagedListOfIdeas(pageable)).hasMessage("Page size is too large.");
     }
 
     @Test

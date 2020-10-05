@@ -35,7 +35,7 @@ public class IdeasController {
                                            @SortDefault(sort = "id", direction = Sort.Direction.ASC) Sort sort,
                                            @RequestParam(value = "limit", defaultValue = "20") Integer limit) {
         Pageable pageable = PageRequest.of(pageNumber > 0 ? pageNumber - 1 : pageNumber, pageSize, sort);
-        return ResponseEntity.ok(getIdeaService().getPagedListOfIdeas(pageable, limit));
+        return ResponseEntity.ok(getIdeaService().getPagedListOfIdeas(pageable));
     }
 
     public IdeaService getIdeaService() {
