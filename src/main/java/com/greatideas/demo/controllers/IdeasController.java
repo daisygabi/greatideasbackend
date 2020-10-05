@@ -1,9 +1,7 @@
 package com.greatideas.demo.controllers;
 
-import com.greatideas.demo.persistence.domain.Idea;
 import com.greatideas.demo.persistence.dtos.IdeaDto;
 import com.greatideas.demo.persistence.services.IdeaService;
-import com.greatideas.demo.utils.EntityHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -28,15 +26,14 @@ public class IdeasController {
 
     @PostMapping("/")
     public ResponseEntity<IdeaDto> save(@Valid @RequestBody IdeaDto ideaDto) {
-        Idea savedPantryItem = getIdeaService().save(EntityHelper.convertToAbstractEntity(ideaDto, Idea.class));
-        return ResponseEntity.ok(EntityHelper.convertToAbstractDto(savedPantryItem, IdeaDto.class));
+        return ResponseEntity.ok(getIdeaService().save(ideaDto));
     }
 
     @GetMapping("/")
     public ResponseEntity<?> getPagedIdeas(@RequestParam(value = "pageSize", defaultValue = "1") Integer pageSize,
                                            @RequestParam(value = "pageNo", defaultValue = "1") Integer pageNumber,
                                            @SortDefault(sort = "id", direction = Sort.Direction.ASC) Sort sort,
-                                           @RequestParam(value = "limit", defaultValue = "0") Integer limit) {
+                                           @RequestParam(value = "limit", defaultValue = "20") Integer limit) {
         Pageable pageable = PageRequest.of(pageNumber > 0 ? pageNumber - 1 : pageNumber, pageSize, sort);
         return ResponseEntity.ok(getIdeaService().getPagedListOfIdeas(pageable, limit));
     }
