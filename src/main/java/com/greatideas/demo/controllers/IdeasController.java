@@ -33,11 +33,11 @@ public class IdeasController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<?> getPagedIdeas(@RequestParam(value = "pageSize", defaultValue = "0") Integer pageSize,
+    public ResponseEntity<?> getPagedIdeas(@RequestParam(value = "pageSize", defaultValue = "1") Integer pageSize,
                                            @RequestParam(value = "pageNo", defaultValue = "1") Integer pageNumber,
                                            @SortDefault(sort = "id", direction = Sort.Direction.ASC) Sort sort,
                                            @RequestParam(value = "limit", defaultValue = "0") Integer limit) {
-        Pageable pageable = PageRequest.of(pageNumber > 0 ? pageNumber - 1 : pageNumber, 4, sort);
+        Pageable pageable = PageRequest.of(pageNumber > 0 ? pageNumber - 1 : pageNumber, pageSize, sort);
         return ResponseEntity.ok(getIdeaService().getPagedListOfIdeas(pageable, limit));
     }
 
